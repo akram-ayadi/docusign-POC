@@ -1,45 +1,17 @@
-import { Tabs } from 'expo-router';
 import React from 'react';
-import { Platform } from 'react-native';
 
-import { HapticTab } from '@/components/HapticTab';
-import { IconSymbol } from '@/components/ui/IconSymbol';
-import TabBarBackground from '@/components/ui/TabBarBackground';
-import { Colors } from '@/constants/Colors';
-import { useColorScheme } from '@/hooks/useColorScheme';
+const DOCUSIGN_URL = "https://demo.docusign.net/Signing/MTRedeem/v1/c56ed680-83e2-407f-8ca1-cfe3d31b9428?slt=eyJ0eXAiOiJNVCIsImFsZyI6IlJTMjU2Iiwia2lkIjoiNjgxODVmZjEtNGU1MS00Y2U5LWFmMWMtNjg5ODEyMjAzMzE3In0.AQYAAAABAAMABwAAcIzpB0rdSAgAABCecClK3UgYAAEAAAAAAAAAIQDsAgAAeyJUb2tlbklkIjoiYzMyZjkwZDAtOGYyMy00MzZhLWFlNTctN2Q1MDgxZGRkZjAxIiwiRXhwaXJhdGlvbiI6IjIwMjUtMDItMTBUMTk6MjU6MDArMDA6MDAiLCJJc3N1ZWRBdCI6IjIwMjUtMDItMTBUMTk6MjA6MDAuMzk4NjcwMiswMDowMCIsIlJlc291cmNlSWQiOiJhNjZkMWVkYS03Y2VkLTQyYTktYmNiYy1kNDcxYzBhNDc1MjEiLCJSZXNvdXJjZXMiOiJ7XCJFbnZlbG9wZUlkXCI6XCJhNjZkMWVkYS03Y2VkLTQyYTktYmNiYy1kNDcxYzBhNDc1MjFcIixcIkFjdG9yVXNlcklkXCI6XCIxNTNmODNlMi05ZDEzLTQ5ZjktYWU4MS1iZGZhNDUyMjY4ZjRcIixcIlJlY2lwaWVudElkXCI6XCJkZDQwNmVmYy1iMGQ0LTQ2ZWMtODY1ZC0yMTIxZDcyNDk0NWNcIixcIkZha2VRdWVyeVN0cmluZ1wiOlwidD04NTE3OWE5Mi1lZjM5LTRjYTYtOGZmMS1iYmQ4NTQyNjgwYTdcIixcIkludGVncmF0b3JLZXlcIjpcIjMxNmU3YmUzLTU5N2YtNDJjZC1iMGVjLTEzMzBmNDkwMjUyOFwiLFwiQ3JlYXRlZEF0XCI6XCIyMDI1LTAyLTEwVDE5OjIwOjAwLjI5MDg0MjVaXCJ9IiwiVG9rZW5UeXBlIjoxLCJBdWRpZW5jZSI6IjI1ZTA5Mzk4LTAzNDQtNDkwYy04ZTUzLTNhYjJjYTU2MjdiZiIsIlJlZGlyZWN0VXJpIjoiaHR0cHM6Ly9kZW1vLmRvY3VzaWduLm5ldC9TaWduaW5nL1N0YXJ0SW5TZXNzaW9uLmFzcHgiLCJIYXNoQWxnb3JpdGhtIjowLCJIYXNoUm91bmRzIjowLCJUb2tlblN0YXR1cyI6MCwiSXNTaW5nbGVVc2UiOmZhbHNlfT8AgDfEmwhK3Ug.4y1EL570STWPOWWySfVJILq_Fa2YIjgxaNBpvxsjXNhp1k6_hRGvqQjtbZsC8-Q30uvPRD1GqWD9KYY2TV_NmKpOdQLvIKZooZrPb4h7wPzD9DGqGP1GlF9O5ngu4FJJEWzM5_c6u7I0zWcL8rZfpkxbPrPFu63IB7VuhCJlJlwnA0mxMgkaLp09tEsiRc-hFeocKM3RsiC4AshzG0QLM2HyT0Tke-yHux2oV3sAkPIeM3DAree18QZFUT0pJDZ8Wq5enI1pGYNfSMd1kbu_gfxKa0Tb5xA4tj34N_D4rcKcIey0qYozF3KwJRTVbrFlBf1QbsdEPEFJtQ-JHoTObA";
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
   return (
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
-        tabBarButton: HapticTab,
-        tabBarBackground: TabBarBackground,
-        tabBarStyle: Platform.select({
-          ios: {
-            // Use a transparent background on iOS to show the blur effect
-            position: 'absolute',
-          },
-          default: {},
-        }),
-      }}>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
-        }}
-      />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
-        }}
-      />
-    </Tabs>
+      <div style={{ width: "100vw", height: "100vh" }}>
+          <iframe
+              src={DOCUSIGN_URL}
+              title="DocuSign"
+              width="100%"
+              height="100%"
+              style={{ border: "none" }}
+          ></iframe>
+      </div>
   );
 }
