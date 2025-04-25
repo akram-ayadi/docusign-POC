@@ -19,9 +19,3 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
    ```bash
     npm run ios
    ```
-
-3. Update the `.env` file with your phone number to get the OTP code on your phone number
-   ```
-   PHONE_COUNTRY_CODE="33"
-   PHONE_NUMBER="612345678"
-   ```
