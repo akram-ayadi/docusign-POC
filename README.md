@@ -20,5 +20,8 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
     npm run ios
    ```
 
-
-**NOTE**: `DOCUSIGN_URL` in `app/(tabs)/sign.tsx` is the Docusign embedded signing URL.
+3. Update the `.env` file with your phone number to get the OTP code on your phone number
+   ```
+   PHONE_COUNTRY_CODE="33"
+   PHONE_NUMBER="612345678"
+   ```
